@@ -85,6 +85,7 @@ local.properties
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/dbnavigator.xml
+/.idea/workspace.xml
 
 # Gradle
 .idea/**/gradle.xml
@@ -173,3 +174,5 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
+/url-shortner-service/target/
+/url-shortner-core/target/
