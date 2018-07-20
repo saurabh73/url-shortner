@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5c2cf9e-a076-4bf6-ab45-ac6e1b1f8404" name="Default" comment="" />
+    <list default="true" id="d5c2cf9e-a076-4bf6-ab45-ac6e1b1f8404" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/url-shortner-core/target/" />
     <ignored path="$PROJECT_DIR$/url-shortner-service/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,23 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IUrlStorage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/IUrlStorage.java">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="URLModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/URLModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="435">
+              <caret line="174" column="30" selection-start-line="174" selection-start-column="30" selection-end-line="174" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -52,6 +43,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -62,6 +56,7 @@
         <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/UrlStorage.java" />
         <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/URLModel.java" />
         <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/IUrlStorage.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -93,6 +88,7 @@
     <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -108,37 +104,43 @@
             <path>
               <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
               <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
               <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
               <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
               <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -323,12 +325,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1532067470057</updated>
-      <workItem from="1532067473328" duration="4738000" />
+      <workItem from="1532067473328" duration="5464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4738000" />
+    <option name="totallyTimeSpent" value="5464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -352,7 +354,7 @@
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286385" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286385" />
@@ -418,6 +420,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="174" column="30" selection-start-line="174" selection-start-column="30" selection-end-line="174" selection-end-column="30" />
         </state>
       </provider>
     </entry>
