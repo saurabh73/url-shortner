@@ -21,12 +21,14 @@ public class MainService {
         // Routes
         LOGGER.info("Configuring CONVERT API " + BASE_URL + ServerConfig.CONVERT_ENDPOINT);
         service.get(ServerConfig.CONVERT_ENDPOINT, (request, response) -> {
+            LOGGER.info("Request CONVERT {} ");
             response.status(200);
             return "CONVERT";
         });
 
         LOGGER.info("Configuring FETCH API " + BASE_URL + ServerConfig.FETCH_ENDPOINT);
         service.get(ServerConfig.FETCH_ENDPOINT, (request, response) -> {
+            LOGGER.info("Fetch CONVERT {} ");
             response.status(200);
             return "FETCH";
         });
