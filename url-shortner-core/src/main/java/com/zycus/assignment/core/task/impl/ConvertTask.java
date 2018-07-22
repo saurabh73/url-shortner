@@ -1,19 +1,19 @@
-package com.zycus.assignment.core.task;
+package com.zycus.assignment.core.task.impl;
 
 import com.zycus.assignment.core.dao.IStorageProvider;
 import com.zycus.assignment.core.dao.impl.StorageProvider;
 import com.zycus.assignment.core.model.IUrlModel;
 import com.zycus.assignment.core.model.impl.UrlModel;
+import com.zycus.assignment.core.task.UrlShortnerTask;
 
-import java.util.concurrent.Callable;
+public class ConvertTask implements UrlShortnerTask {
 
-public class ConvertTask implements Callable<String> {
     private String longUrl;
     private IStorageProvider storage;
 
     public ConvertTask(String longUrl) {
         this.longUrl = longUrl;
-        this.storage = StorageProvider.getStrorageProvider();
+        this.storage = StorageProvider.getStorageProvider();
     }
 
     @Override

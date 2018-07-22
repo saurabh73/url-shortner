@@ -1,10 +1,10 @@
 package com.zycus.assignment.core;
 
-import com.zycus.assignment.core.dao.IStorageProvider;
 import com.zycus.assignment.core.dao.impl.StorageProvider;
-import com.zycus.assignment.core.task.ConvertTask;
+import com.zycus.assignment.core.task.UrlShortnerTask;
+import com.zycus.assignment.core.task.impl.ConvertTask;
+import com.zycus.assignment.core.task.impl.FetchTask;
 
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -15,19 +15,37 @@ import java.util.concurrent.Future;
  */
 public class URLShortner {
 
-    private IStorageProvider storage;
-    ExecutorService executor;
-    
+    private ExecutorService executor;
+
     public URLShortner() {
-        this.storage = StorageProvider.getStrorageProvider();
+        /* Initialize Storage */
+        StorageProvider.getStorageProvider();
         this.executor = Executors.newCachedThreadPool();
     }
 
-    public String convert(String longUrl) throws ExecutionException, InterruptedException {
-        ConvertTask task = new ConvertTask(longUrl);
+    public String convert(String longUrl)  {
+        UrlShortnerTask task = new ConvertTask(longUrl);
+        try {
+            return getTaskValue(task);
+        }
+        catch (Exception e) {
+            return "Unable to Convert " + e.getMessage();
+        }
+    }
+
+    public String fetch(String shortUrl) {
+        UrlShortnerTask task = new FetchTask(shortUrl);
+        try {
+            return getTaskValue(task);
+        }
+        catch (Exception e) {
+            return "Unable to Fetch: " + e.getMessage();
+        }
+    }
+
+    private String getTaskValue(UrlShortnerTask task)  throws ExecutionException, InterruptedException {
         Future<String> futureCall = this.executor.submit(task);
         return futureCall.get();
     }
-
 
 }

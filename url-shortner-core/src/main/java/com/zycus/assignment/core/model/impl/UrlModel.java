@@ -9,6 +9,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Objects;
 
 public class UrlModel implements IUrlModel {
 
@@ -16,6 +17,30 @@ public class UrlModel implements IUrlModel {
     private URL longUrl;
     private Long expiry;
     private Date createdAt;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UrlModel urlModel = (UrlModel) o;
+        return urlModel.getShortHash().equals(getShortHash()) &&
+                urlModel.getLongUrl().toString().equalsIgnoreCase(getLongUrl().toString());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getShortHash(), getLongUrl());
+    }
+
+    @Override
+    public String toString() {
+        return "UrlModel{" +
+                "shortHash='" + shortHash +
+                ", longUrl=" + longUrl +
+                ", expiry=" + expiry +
+                ", createdAt=" + createdAt +
+                "}";
+    }
 
     private UrlModel(String shortHash, URL longUrl) {
         this.shortHash = shortHash;
@@ -39,16 +64,6 @@ public class UrlModel implements IUrlModel {
     @Override
     public URL getLongUrl() {
         return longUrl;
-    }
-
-    @Override
-    public Long getExpiry() {
-        return expiry;
-    }
-
-    @Override
-    public Date getCreatedAt() {
-        return createdAt;
     }
 
     public static UrlModel buildUrlModel(String longUrl) throws MalformedURLException {

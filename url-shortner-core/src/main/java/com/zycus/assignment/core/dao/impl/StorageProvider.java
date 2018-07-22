@@ -15,7 +15,7 @@ public class StorageProvider implements IStorageProvider {
         urlHashMap = new ConcurrentHashMap<>();
     }
 
-    public static IStorageProvider getStrorageProvider() {
+    public static IStorageProvider getStorageProvider() {
         if (storageProvider == null) {
             storageProvider = new StorageProvider();
         }
@@ -25,6 +25,8 @@ public class StorageProvider implements IStorageProvider {
     @Override
     public String addUrl(IUrlModel urlItem) {
         IUrlModel value = this.urlHashMap.putIfAbsent(urlItem.getShortHash(), urlItem);
+
+        // Already Existing
         if (value != null) {
             // Update if Current value is expired.
             if (value.isExpired()) {
@@ -38,7 +40,8 @@ public class StorageProvider implements IStorageProvider {
             }
             return value.getShortHash();
         }
-        return null;
+        // Return New Value
+        return urlItem.getShortHash();
     }
 
     @Override
@@ -47,6 +50,6 @@ public class StorageProvider implements IStorageProvider {
         if (value != null) {
             return value.getLongUrl().toString();
         }
-        return null;
+        return "";
     }
 }

@@ -12,8 +12,4 @@ public interface IUrlModel {
     String getShortHash();
 
     URL getLongUrl();
-
-    Long getExpiry();
-
-    Date getCreatedAt();
 }
