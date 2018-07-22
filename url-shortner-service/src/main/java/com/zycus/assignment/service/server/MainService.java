@@ -37,50 +37,55 @@ public class MainService {
         LOGGER.info("Configuring CONVERT API " + BASE_URL + ServerConfig.CONVERT_ENDPOINT);
         service.post(ServerConfig.CONVERT_ENDPOINT, (request, response) -> {
             LOGGER.info("Request CONVERT {} ");
-            List<NameValuePair> pairs = URLEncodedUtils.parse(request.body(), Charset.defaultCharset());
-            Map<String, String> params = toMap(pairs);
-            String url = params.get("url");
+            Map<String, String> body = parseBody(request.body());
+            String url = body.get("url");
             if (url != null) {
                 url =  URLDecoder.decode(url, "UTF-8");
                 try {
                     response.status(200);
                     return this.shortnerTask.convert(url);
-                } catch (FetchException ex) {
-                    response.status(422);
-                    return ex.getMessage();
-                }
-            } else {
-                response.status(400);
-                return "URL not present";
-            }
-        });
-
-        LOGGER.info("Configuring FETCH API " + BASE_URL + ServerConfig.FETCH_ENDPOINT);
-        service.get(ServerConfig.FETCH_ENDPOINT, (request, response) -> {
-            LOGGER.info("Request FETCH {} ");
-            String url = request.queryParams("url");
-            if (url != null) {
-                try {
-                    LOGGER.info("Short URL "+ url);
-                    response.status(200);
-                    return this.shortnerTask.fetch(url);
                 } catch (ConvertException ex) {
                     response.status(422);
                     return ex.getMessage();
                 }
             } else {
                 response.status(400);
-                return "URL not present";
+                return "Invalid Body: \'url\' not present";
+            }
+        });
+
+        LOGGER.info("Configuring FETCH API " + BASE_URL + ServerConfig.FETCH_ENDPOINT);
+        service.get(ServerConfig.FETCH_ENDPOINT, (request, response) -> {
+            LOGGER.info("Request FETCH {} ");
+            String hash = request.queryParams("hash");
+            if (hash != null) {
+                try {
+                    LOGGER.info("Short URL "+ hash);
+                    response.status(200);
+                    return this.shortnerTask.fetch(hash);
+                } catch (FetchException ex) {
+                    response.status(422);
+                    return ex.getMessage();
+                }
+            } else {
+                response.status(400);
+                return "Invalid Request: query parameter \'hash\' not present";
             }
         });
 
     }
+    
 
     public void stop() {
         LOGGER.info("Stopping REST server service");
         if (service != null) {
             service.stop();
         }
+    }
+
+    private Map<String,String> parseBody(String body) {
+        List<NameValuePair> pairs = URLEncodedUtils.parse(body, Charset.defaultCharset());
+        return toMap(pairs);
     }
 
     private static Map<String, String> toMap(List<NameValuePair> pairs){
