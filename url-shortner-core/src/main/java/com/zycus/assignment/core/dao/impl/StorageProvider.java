@@ -23,7 +23,7 @@ public class StorageProvider implements IStorageProvider {
     }
 
     @Override
-    public void addUrl(IUrlModel urlItem) {
+    public String addUrl(IUrlModel urlItem) {
         IUrlModel value = this.urlHashMap.putIfAbsent(urlItem.getShortHash(), urlItem);
         if (value != null) {
             // Update if Current value is expired.
@@ -36,8 +36,9 @@ public class StorageProvider implements IStorageProvider {
             if (!value.equals(urlItem)) {
                 throw new RuntimeException("Hash Collision");
             }
+            return value.getShortHash();
         }
-
+        return null;
     }
 
     @Override
