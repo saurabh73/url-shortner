@@ -1,10 +1,15 @@
 package com.zycus.assignment.core.dao.impl;
 
 import com.zycus.assignment.core.dao.IStorageProvider;
+import com.zycus.assignment.core.exception.HashCollisionException;
+import com.zycus.assignment.core.exception.HashNotFoundException;
+import com.zycus.assignment.core.exception.InvalidHashException;
+import com.zycus.assignment.core.exception.UrlExpiredException;
 import com.zycus.assignment.core.model.IUrlModel;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Pattern;
 
 public class StorageProvider implements IStorageProvider {
 
@@ -36,7 +41,7 @@ public class StorageProvider implements IStorageProvider {
 
             // Check if new Item not Equals to Existing Value.
             if (!value.equals(urlItem)) {
-                throw new RuntimeException("Hash Collision");
+                throw new HashCollisionException("Hash Collision Has Occurred");
             }
             return value.getShortHash();
         }
@@ -46,10 +51,19 @@ public class StorageProvider implements IStorageProvider {
 
     @Override
     public String getUrl(String hash) {
+        // check validity
+        String pattern = Pattern.compile("^["+IUrlModel.ALPHABET+ "]{7,9}$").pattern();
+        if (!hash.matches(pattern)) {
+            throw new InvalidHashException("Hash Pattern is not valid");
+        }
+
         IUrlModel value = this.urlHashMap.get(hash);
         if (value != null) {
+            if (value.isExpired()) {
+                throw new UrlExpiredException("Short URL " + hash +" has expired");
+            }
             return value.getLongUrl().toString();
         }
-        return "";
+        throw new HashNotFoundException("URL for " + hash + " is not found");
     }
 }

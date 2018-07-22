@@ -18,6 +18,78 @@ public class UrlModel implements IUrlModel {
     private Long expiry;
     private Date createdAt;
 
+    private UrlModel(String shortHash, URL longUrl) {
+        this.shortHash = shortHash;
+        this.longUrl = longUrl;
+        this.expiry = DEFAULT_EXPIRY;
+        this.createdAt = new Date();
+    }
+
+    @Override
+    public boolean isExpired() {
+        Date currentTime = new Date();
+        Date expiryTime = new Date(this.createdAt.getTime() + this.expiry * 1000);
+        return expiryTime.before(currentTime);
+    }
+
+    @Override
+    public String getShortHash() {
+        return shortHash;
+    }
+
+    @Override
+    public URL getLongUrl() {
+        return longUrl;
+    }
+
+    public static UrlModel buildUrlModel(String longUrl) throws MalformedURLException {
+        URL url = parseUrl(longUrl);
+        return new UrlModel(generateHash(url.toString()), url);
+    }
+
+    private static URL parseUrl(String longUrl) throws MalformedURLException {
+        URL url;
+        try {
+            url = new URL(longUrl);
+        }
+        catch (MalformedURLException e) {
+            if (e.getMessage().contains("no protocol")) {
+                url = new URL("http://" + longUrl);
+            } else {
+                throw e;
+            }
+        }
+        if (!url.getProtocol().startsWith("http")) {
+            throw new MalformedURLException("Protocol Should be either HTTP/HTTPS");
+        }
+        return url;
+    }
+
+    private static String generateHash(String url) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(url.getBytes());
+            messageDigest = Arrays.copyOf(messageDigest, 6);
+            BigInteger number = new BigInteger(1, messageDigest);
+            return encode(number.longValue());
+        }
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static String encode(long num) {
+        StringBuilder sb = new StringBuilder();
+        while (num > 0) {
+            sb.append(ALPHABET.charAt((int) (num % BASE)));
+            num /= BASE;
+        }
+        while (sb.length() < 9) {
+            sb.append("0");
+        }
+        return sb.reverse().toString();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -41,60 +113,5 @@ public class UrlModel implements IUrlModel {
                 ", createdAt=" + createdAt +
                 "}";
     }
-
-    private UrlModel(String shortHash, URL longUrl) {
-        this.shortHash = shortHash;
-        this.longUrl = longUrl;
-        this.expiry = 3600L;
-        this.createdAt = new Date();
-    }
-
-    @Override
-    public boolean isExpired() {
-        Date currentTime = new Date();
-        Date expiryTime = new Date(this.createdAt.getTime() + this.expiry * 1000);
-        return expiryTime.before(currentTime);
-    }
-
-    @Override
-    public String getShortHash() {
-        return shortHash;
-    }
-
-    @Override
-    public URL getLongUrl() {
-        return longUrl;
-    }
-
-    public static UrlModel buildUrlModel(String longUrl) throws MalformedURLException {
-        URL url = new URL(longUrl);
-        if (!url.getProtocol().startsWith("http")) {
-            throw new MalformedURLException("Protocol Should be either HTTP/HTTPS");
-        }
-        return new UrlModel(generateHash(url.toString()), url);
-    }
-
-    private static String generateHash(String url) {
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] messageDigest = md.digest(url.getBytes());
-            messageDigest = Arrays.copyOf(messageDigest, 6);
-            BigInteger number = new BigInteger(1, messageDigest);
-            return encode(number.longValue());
-        }
-        catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private static String encode(long num) {
-        StringBuilder sb = new StringBuilder();
-        while (num > 0) {
-            sb.append(ALPHABET.charAt((int) (num % BASE)));
-            num /= BASE;
-        }
-        return sb.reverse().toString();
-    }
-
 
 }

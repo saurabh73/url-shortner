@@ -25,7 +25,7 @@ public class URLShortner {
         this.executor = Executors.newCachedThreadPool();
     }
 
-    public String convert(String longUrl)  {
+    public String convert(String longUrl) throws ConvertException {
         UrlShortnerTask task = new ConvertTask(longUrl);
         try {
             return getTaskValue(task);
@@ -35,7 +35,7 @@ public class URLShortner {
         }
     }
 
-    public String fetch(String shortUrl) {
+    public String fetch(String shortUrl) throws FetchException {
         UrlShortnerTask task = new FetchTask(shortUrl);
         try {
             return getTaskValue(task);

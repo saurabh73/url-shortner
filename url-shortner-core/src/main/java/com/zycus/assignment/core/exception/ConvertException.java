@@ -1,6 +1,6 @@
 package com.zycus.assignment.core.exception;
 
-public class ConvertException extends RuntimeException {
+public class ConvertException extends Exception {
     public ConvertException(String msg) {
         super(msg);
     }
