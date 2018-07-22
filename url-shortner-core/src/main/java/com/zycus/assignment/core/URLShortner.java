@@ -1,6 +1,8 @@
 package com.zycus.assignment.core;
 
 import com.zycus.assignment.core.dao.impl.StorageProvider;
+import com.zycus.assignment.core.exception.ConvertException;
+import com.zycus.assignment.core.exception.FetchException;
 import com.zycus.assignment.core.task.UrlShortnerTask;
 import com.zycus.assignment.core.task.impl.ConvertTask;
 import com.zycus.assignment.core.task.impl.FetchTask;
@@ -28,8 +30,8 @@ public class URLShortner {
         try {
             return getTaskValue(task);
         }
-        catch (Exception e) {
-            return "Unable to Convert " + e.getMessage();
+        catch (Exception ex) {
+            throw new ConvertException("Not able to Convert:  " + longUrl + " : " + ex.getMessage());
         }
     }
 
@@ -38,8 +40,8 @@ public class URLShortner {
         try {
             return getTaskValue(task);
         }
-        catch (Exception e) {
-            return "Unable to Fetch: " + e.getMessage();
+        catch (Exception ex) {
+            throw new FetchException("Not able to Fetch " + shortUrl + " : " + ex.getMessage());
         }
     }
 

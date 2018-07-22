@@ -9,6 +9,6 @@ public class Main {
         System.out.println(hash);
         String longUrl = shortner.fetch(hash);
         System.out.println(longUrl);
-        
+
     }
 }

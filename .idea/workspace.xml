@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5c2cf9e-a076-4bf6-ab45-ac6e1b1f8404" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/task/UrlShortnerTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/task/impl/FetchTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/exception/ConvertException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/exception/FetchException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/URLShortner.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/URLShortner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/dao/impl/StorageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/dao/impl/StorageProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/IUrlModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/IUrlModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/impl/UrlModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/impl/UrlModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/task/ConvertTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/task/impl/ConvertTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/server/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/server/MainService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/url-shortner-core/target/" />
     <ignored path="$PROJECT_DIR$/url-shortner-service/target/" />
@@ -31,23 +28,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="URLShortner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/URLShortner.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="35" column="42" lean-forward="true" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="115">
+              <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/Main.java">
+      <file leaf-file-name="MainService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/server/MainService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
-              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+              <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,7 +76,6 @@
         <option value="$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/MainService.java" />
         <option value="$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/ServerConfig.java" />
         <option value="$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/Application.java" />
-        <option value="$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/server/MainService.java" />
         <option value="$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/config/ServerConfig.java" />
         <option value="$PROJECT_DIR$/url-shortner-service/pom.xml" />
         <option value="$PROJECT_DIR$/url-shortner-core/src/test/java/com/zycus/assignment/core/model/StorageProvider.java" />
@@ -96,8 +92,11 @@
         <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/IUrlModel.java" />
         <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/model/impl/UrlModel.java" />
         <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/task/impl/FetchTask.java" />
-        <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/URLShortner.java" />
         <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/Main.java" />
+        <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/exception/FetchException.java" />
+        <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/URLShortner.java" />
+        <option value="$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/exception/ConvertException.java" />
+        <option value="$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/server/MainService.java" />
       </list>
     </option>
   </component>
@@ -162,115 +161,47 @@
             <path>
               <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
               <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
               <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
               <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
               <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
               <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
               <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
+              <item name="url-shortner-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="url-shortner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="url-shortner" type="462c0819:PsiDirectoryNode" />
-              <item name="url-shortner-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -293,6 +224,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.zycus.assignment.core.exception" />
       <recent name="com.zycus.assignment.core.task.impl" />
       <recent name="com.zycus.assignment.core.model" />
     </key>
@@ -477,12 +409,12 @@
       <workItem from="1532067473328" duration="8307000" />
       <workItem from="1532089809442" duration="79000" />
       <workItem from="1532089944260" duration="10920000" />
-      <workItem from="1532136114070" duration="26996000" />
+      <workItem from="1532136114070" duration="28609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46302000" />
+    <option name="totallyTimeSpent" value="47915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -619,16 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/server/MainService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-368">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/dao/IStorageProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -702,10 +624,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/exception/FetchException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#139#140#0" expanded="true" />
+            <element signature="e#162#163#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/exception/ConvertException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#143#144#0" expanded="true" />
+            <element signature="e#166#167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/URLShortner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="35" column="42" lean-forward="true" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+        <state relative-caret-position="828">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -714,8 +658,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/url-shortner-core/src/main/java/com/zycus/assignment/core/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url-shortner-service/src/main/java/com/zycus/assignment/service/server/MainService.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
