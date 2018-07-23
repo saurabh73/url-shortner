@@ -25,8 +25,8 @@ public class UrlModelTest {
 
     @Test
     public void testIsExpiredTrue() {
-        Boolean isExpired = this.urlModel.isExpired();
         this.urlModel.setCreatedAt(new Date(System.currentTimeMillis() - IUrlModel.DEFAULT_EXPIRY*10L*1000L));
+        Boolean isExpired = this.urlModel.isExpired();
         Assert.assertTrue(isExpired);
     }
 
