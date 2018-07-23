@@ -38,7 +38,6 @@ public class StorageProvider implements IStorageProvider {
                 this.urlHashMap.replace(urlItem.getShortHash(), urlItem);
                 value = urlItem;
             }
-
             // Check if new Item not Equals to Existing Value.
             if (!value.equals(urlItem)) {
                 throw new HashCollisionException("Hash Collision Has Occurred");
@@ -65,5 +64,10 @@ public class StorageProvider implements IStorageProvider {
             return value.getLongUrl().toString();
         }
         throw new HashNotFoundException("URL for " + hash + " is not found");
+    }
+
+    @Override
+    public Map<String, IUrlModel> getStorageMap() {
+        return this.urlHashMap;
     }
 }

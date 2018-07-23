@@ -1,6 +1,7 @@
 package com.zycus.assignment.core.model;
 
 import java.net.URL;
+import java.util.Date;
 
 public interface IUrlModel {
     int BASE = 62;
@@ -12,4 +13,12 @@ public interface IUrlModel {
     String getShortHash();
 
     URL getLongUrl();
+
+    void setCreatedAt(Date createdAt);
+
+    void setShortHash(String shortHash);
+
+    void setLongUrl(URL longUrl);
+
+    void setExpiry(Long expiry);
 }

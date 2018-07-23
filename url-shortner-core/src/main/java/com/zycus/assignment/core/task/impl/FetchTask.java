@@ -14,7 +14,7 @@ public class FetchTask implements UrlShortnerTask {
     }
 
     @Override
-    public String call() throws Exception {
+    public String call() {
         return this.storage.getUrl(this.shortUrl);
     }
 }

@@ -18,28 +18,12 @@ public class UrlModel implements IUrlModel {
     private Long expiry;
     private Date createdAt;
 
+
     private UrlModel(String shortHash, URL longUrl) {
         this.shortHash = shortHash;
         this.longUrl = longUrl;
         this.expiry = DEFAULT_EXPIRY;
-        this.createdAt = new Date();
-    }
-
-    @Override
-    public boolean isExpired() {
-        Date currentTime = new Date();
-        Date expiryTime = new Date(this.createdAt.getTime() + this.expiry * 1000);
-        return expiryTime.before(currentTime);
-    }
-
-    @Override
-    public String getShortHash() {
-        return shortHash;
-    }
-
-    @Override
-    public URL getLongUrl() {
-        return longUrl;
+        this.setCreatedAt(new Date());
     }
 
     public static UrlModel buildUrlModel(String longUrl) throws MalformedURLException {
@@ -48,19 +32,12 @@ public class UrlModel implements IUrlModel {
     }
 
     private static URL parseUrl(String longUrl) throws MalformedURLException {
-        URL url;
-        try {
-            url = new URL(longUrl);
-        }
-        catch (MalformedURLException e) {
-            if (e.getMessage().contains("no protocol")) {
-                url = new URL("http://" + longUrl);
-            } else {
-                throw e;
-            }
-        }
+        URL url = new URL(longUrl);
         if (!url.getProtocol().startsWith("http")) {
             throw new MalformedURLException("Protocol Should be either HTTP/HTTPS");
+        }
+        if (!url.getHost().contains(".")) {
+            throw new MalformedURLException("Domain name should be present");
         }
         return url;
     }
@@ -91,6 +68,43 @@ public class UrlModel implements IUrlModel {
     }
 
     @Override
+    public boolean isExpired() {
+        Date currentTime = new Date();
+        Date expiryTime = new Date(this.createdAt.getTime() + this.expiry * 1000);
+        return expiryTime.before(currentTime);
+    }
+
+    @Override
+    public String getShortHash() {
+        return shortHash;
+    }
+
+    @Override
+    public URL getLongUrl() {
+        return longUrl;
+    }
+
+    @Override
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    @Override
+    public void setShortHash(String shortHash) {
+        this.shortHash = shortHash;
+    }
+
+    @Override
+    public void setLongUrl(URL longUrl) {
+        this.longUrl = longUrl;
+    }
+
+    @Override
+    public void setExpiry(Long expiry) {
+        this.expiry = expiry;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -113,5 +127,4 @@ public class UrlModel implements IUrlModel {
                 ", createdAt=" + createdAt +
                 "}";
     }
-
 }
